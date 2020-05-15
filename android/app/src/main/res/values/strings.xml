@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Bill</string>
+
+    <string name="home">首页</string>
+    <string name="chart">图表</string>
+    <string name="add">新增一笔</string>
+    <string name="personal">个人</string>
+    <string name="setting">设置</string>
+</resources>
