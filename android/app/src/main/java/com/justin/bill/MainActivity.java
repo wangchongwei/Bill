@@ -1,17 +1,20 @@
 package com.justin.bill;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.justin.bill.fragments.add.AddBillActivity;
 import com.justin.bill.fragments.add.AddFragment;
 import com.justin.bill.fragments.chart.ChartFragment;
 import com.justin.bill.fragments.home.HomeFragment;
@@ -88,6 +91,8 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
             case R.id.layout_Add:
                 currentIndex = 2;
+                Intent intent = new Intent(MainActivity.this, AddBillActivity.class);
+                startActivityForResult(intent, IntentCode.INTENT_ADD_BILL_ACTIVITY);
                 break;
 
             case R.id.layout_Personal:
@@ -104,7 +109,12 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         }
         // 当当前下标与上一次下标一致，认为是重复操作
         if(currentIndex == lastIndex) return;
-        viewPager2.setCurrentItem(currentIndex);
-        lastIndex = currentIndex;
+//        viewPager2.setCurrentItem(currentIndex);
+//        lastIndex = currentIndex;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

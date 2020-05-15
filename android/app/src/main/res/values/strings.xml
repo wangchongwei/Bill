@@ -6,4 +6,8 @@
     <string name="add">新增一笔</string>
     <string name="personal">个人</string>
     <string name="setting">设置</string>
+    <string name="out">支出</string>
+    <string name="income">收入</string>
+
+    <string name="vedio">语音识别</string>
 </resources>
